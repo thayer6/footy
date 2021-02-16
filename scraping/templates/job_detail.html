@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block title %}{{ block.super }}Profile{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<a class="btn btn-default" href="{% url 'account_login' %}" role="button">Log in</a>
+<a class="btn btn-primary" href="{% url 'account_signup' %}" role="button">Sign up</a>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+{% block container %}
+<div class="container mt-2"
+    <div class="col">
+        <h5 class="text-center"><h1><strong>{{ job.title }}</strong></h1></h5>
+        <h6 class="text-center"><h3>{{ job.company }}</h3></h6>
+    </div>
+</div>
+<div class="container mt-2">
+        <div class="mb-2-right">
+        <a href={{ job.job_url }} class="btn btn-primary">Go to Job</a>
+        <a href={% static 'resume_doc.docx' %} class="btn btn-primary">Download Resume</a>
+        <a href={% static 'coverletter_doc.docx' %} class="btn btn-primary">Download Cover Letter</a>
+    </div>
+        <p class="job-card text-left">{{ job.job_raw_text|safe }}</p>
+    </div>
+</div>
+<!--
+<h1>{{ job.title }}</h1>
+    <h5>Job URL:</h5>
+        <p>{{ job.job_url }}</p>
+        <br>
+    <h5>Job Text:</h5>
+        <p>{{ job.job_text }}</p>
+      <div class="btn-toolbar">
+        <button type="button" class="btn btn-primary">Download Personalized Resume</button>
+        <button type="button" class="btn btn-primary">Download Personalized Cover Letter</button>
+    </div>
+-->
+{% endblock %}

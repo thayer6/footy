@@ -25,10 +25,8 @@
   <div class="jumbotron jumbotron-carousel corporate-jumbo">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-sm-8">
+        <div class="d-flex titlebox text-center">
           <h1>{% include "_brandname.html" %}</h1>
-        </div>
-        <div class="col-md-4 col-sm-4">
         </div>
       </div>
     </div>
@@ -36,42 +34,6 @@
 {% endblock splash %}
 
 {% block container %}
-  {% if not user.is_authenticated %}
-<!-- Benefits of the Django application -->
-<a id="about"></a>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6">
-      <h2>How does it work?</h2>
-      <p>Create a profile, peruse jobs recommended based on your experience, and download a cover letter tailored specifically for that role and personalized just for you!</p>
-      <p><a class="btn btn-primary" href="#" role="button">Learn More &raquo;</a></p>
-    </div>
-    <div class="col-lg-6">
-      <h2>How much does it cost?</h2>
-      <p>Job hunting shouldn't cost you an arm and a leg, all of our services are free of charge! </p>
-      <p><a class="btn btn-primary" href="#" role="button">Learn More &raquo;</a></p>
-    </div>
-  </div>
-</div>
-  {% else %}
-<a id="about"></a>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6">
-      <h2>How do I get started?</h2>
-      <p>Login to your LinkedIn, fill out job titles and locations of interest then peruse jobs recommended just for you based on your experience!</p>
-      <p><a class="btn btn-primary" href="#" role="button">Learn More &raquo;</a></p>
-    </div>
-    <div class="col-lg-6">
-      <h2>What's next?</h2>
-      <p>Once you see a job you like, download a curated resume and cover letter tailored to the role and your personalized just for you so that you're ready to apply in seconds!</p>
-      <p><a class="btn btn-primary" href="#" role="button">Learn More &raquo;</a></p>
-    </div>
-  </div>
-</div>
-  {% endif %}
 {% endblock container %}
 
 {% block scripts %}

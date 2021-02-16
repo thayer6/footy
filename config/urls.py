@@ -18,6 +18,10 @@ urlpatterns = [
     path("users/", include("footy.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path("table/", include("scraping.urls")), 
+    #path("stats/", include("scraping.urls")), 
+    #path("fixtures/", include("scraping.urls")),  # add project urls to main
+    path("", include("scraping.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
     # Static file serving when using Gunicorn + Uvicorn for local web socket development

@@ -1,0 +1,33 @@
+from django.shortcuts import render
+
+from scraping.models import Table
+
+def table_view(request):
+    table = Table.objects.all()
+    return render(request,'table.html',{'table':table})
+
+# # import the get_user_model
+# # User = get_user_model()
+
+
+# # user_search = list(User.objects.value_list(jobs_of_interest, flat = True))
+# # jobs = Job.objects.filter(searched_job=user_search, )
+# # for loop to loop through user_search if error thrown from filter
+
+# # Create your views here.
+# def job_index(request):
+#     # queryset to return all job objects
+#     # TODO: return only the jobs that are specific to the user
+#     # user_search = list(User.objects.value_list(jobs_of_interest, flat = True))
+#     # jobs = list(Job.objects.filter(job_searched = user_search))
+#     # error may be thrown here, if so loop through user_search to filter job_searched
+#     jobs = Job.objects.all()
+#     context = {"jobs": jobs}
+
+#     return render(request, "job_index.html", context)
+
+
+# def job_detail(request, pk):
+#     job = Job.objects.get(pk=pk)
+#     context = {"job": job}
+#     return render(request, "job_detail.html", context)

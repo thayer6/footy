@@ -40,3 +40,4 @@ pytest-django==4.1.0  # https://github.com/pytest-dev/pytest-django
 bs4==0.0.1
 tqdm==4.46.1
 easy-thumbnails==2.7
+pandas==1.1.5

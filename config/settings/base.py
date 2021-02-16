@@ -41,7 +41,16 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {"default": env.db("DATABASE_URL")}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "footy",
+        "USER": "debug",
+        "HOST": "postgres",
+        "PORT": 5432,
+        "PASSWORD": "debug",
+    }
+}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # URLS
@@ -79,6 +88,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "footy.users.apps.UsersConfig",
     # Your stuff: custom apps go here
+    "scraping",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
