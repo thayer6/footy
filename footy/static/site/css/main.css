@@ -265,7 +265,7 @@ body>.navbar-transparent {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .styled-table thead tr {
-    background-color: #009879;
+    background-color: #333;
     color: #ffffff;
     text-align: left;
 }
@@ -285,6 +285,7 @@ body>.navbar-transparent {
     border-bottom: 2px solid #009879;
 }
 .titlebox{
+    position: relative;
     background-color: #333 ;
     padding: 10px ;
     border: 1px solid black ;
