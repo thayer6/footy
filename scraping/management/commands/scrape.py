@@ -103,6 +103,8 @@ class Command(BaseCommand):
                 resfix_df['xg_b'][i] = 0
         #print(resfix_df)
 
+        # reset stats database
+        #Stats.objects.all().delete()
         stats_url = "https://fbref.com/en/comps/9/stats/Premier-League-Stats"
         stats_df = get_table(stats_url, stats_features)
 
@@ -192,39 +194,39 @@ class Command(BaseCommand):
             print('results & fixtures updated')
         # scrape epl stats
         for i in range(0,20):
-        #     # initial creation of table
-        #     try:
-        #         Stats.objects.create(
-        #             squad = stats_df['squad'][i],
-        #             players_used = stats_df['players_used'][i],
-        #             avg_age = stats_df['avg_age'][i],
-        #             possession = stats_df['possession'][i],
-        #             games = stats_df['games'][i],
-        #             games_starts = stats_df['games_starts'][i],
-        #             minutes = stats_df['minutes'][i],
-        #             minutes_90 = stats_df['minutes_90s'][i],
-        #             goals = stats_df['goals'][i],
-        #             assists = stats_df['assists'][i],
-        #             goals_pens = stats_df['goals_pens'][i],
-        #             pens_made = stats_df['pens_made'][i],
-        #             pens_att = stats_df['pens_att'][i],
-        #             cards_yellow = stats_df['cards_yellow'][i],
-        #             cards_red = stats_df['cards_red'][i],
-        #             goals_per90 = stats_df['goals_per90'][i],
-        #             goals_assists_per90 = stats_df['goals_assists_per90'][i],
-        #             goals_pens_per90 = stats_df['goals_pens_per90'][i],
-        #             goals_assists_pens_per90 = stats_df['goals_assists_pens_per90'][i],
-        #             xg = stats_df['xg'][i],
-        #             npxg = stats_df['npxg'][i],
-        #             xa = stats_df['xa'][i],
-        #             xa_per90 = stats_df['xa_per90'][i],
-        #             xg_xa_per90 = stats_df['xg_xa_per90'][i],
-        #             npxg_per90 = stats_df['npxg_per90'][i],
-        #             npxg_xa_per90 = stats_df['npxg_xa_per90'][i] 
-        #         )
-        #         print('stats table created')
-        #     except django.db.utils.IntegrityError:
-        #         print('not created')            
+            # # initial creation of table
+            # try:
+            #     Stats.objects.create(
+            #         squad = stats_df['squad'][i],
+            #         players_used = stats_df['players_used'][i],
+            #         avg_age = stats_df['avg_age'][i],
+            #         possession = stats_df['possession'][i],
+            #         games = stats_df['games'][i],
+            #         games_starts = stats_df['games_starts'][i],
+            #         minutes = stats_df['minutes'][i],
+            #         minutes_90 = stats_df['minutes_90s'][i],
+            #         goals = stats_df['goals'][i],
+            #         assists = stats_df['assists'][i],
+            #         goals_pens = stats_df['goals_pens'][i],
+            #         pens_made = stats_df['pens_made'][i],
+            #         pens_att = stats_df['pens_att'][i],
+            #         cards_yellow = stats_df['cards_yellow'][i],
+            #         cards_red = stats_df['cards_red'][i],
+            #         goals_per90 = stats_df['goals_per90'][i],
+            #         goals_assists_per90 = stats_df['goals_assists_per90'][i],
+            #         goals_pens_per90 = stats_df['goals_pens_per90'][i],
+            #         goals_assists_pens_per90 = stats_df['goals_assists_pens_per90'][i],
+            #         xg = stats_df['xg'][i],
+            #         npxg = stats_df['npxg'][i],
+            #         xa = stats_df['xa'][i],
+            #         xa_per90 = stats_df['xa_per90'][i],
+            #         xg_xa_per90 = stats_df['xg_xa_per90'][i],
+            #         npxg_per90 = stats_df['npxg_per90'][i],
+            #         npxg_xa_per90 = stats_df['npxg_xa_per90'][i] 
+            #     )
+            #     print('stats table created')
+            # except django.db.utils.IntegrityError:
+            #     print('not created')            
             Stats.objects.filter(id=i).update(
                 squad = stats_df['squad'][i],
                 players_used = stats_df['players_used'][i],

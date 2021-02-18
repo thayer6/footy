@@ -1,10 +1,22 @@
 from django.shortcuts import render
 
-from scraping.models import Table
+from scraping.models import ResultsFixtures, Table, Stats
 
 def table_view(request):
     table = Table.objects.all()
     return render(request,'table.html',{'table':table})
+
+def results_view(request):
+    results = ResultsFixtures.objects.exclude(score="")
+    return render(request, 'results.html',{'results':results})
+
+def fixtures_view(request):
+    fixtures = ResultsFixtures.objects.filter(score="")
+    return render(request, 'fixtures.html', {'fixtures':fixtures})
+
+def stats_view(request):
+    stats = Stats.objects.all()
+    return render(request, 'stats.html', {'stats':stats})
 
 # # import the get_user_model
 # # User = get_user_model()

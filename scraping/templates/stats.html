@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% load thumbnail %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Home{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<a class="btn btn-default" href="{% url 'account_login' %}" role="button">Log in</a>
+<a class="btn btn-primary" href="{% url 'account_signup' %}" role="button">Sign up</a>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+{% block container %}
+<div class="d-flex justify-content-center mt-0">
+<table class = "styled-table">
+    <tr>
+        <th>Squad</th>
+        <th>Player Used</th>
+        <th>Average Age</th>
+        <th>Posession</th>
+        <th>Games</th>
+        <th>Games Starts</th>
+        <th>Minutes</th>
+        <th>Minutes per 90</th>
+        <th>Goals</th>
+        <th>Assists</th>
+        <th>Goals Pens</th>
+        <th>Pens Made</th>
+        <th>Pens Attempted</th>
+        <th>Yellow Cards</th>
+        <th>Red Cards</th>
+        <th>Goals per 90</th>
+        <th>Assists per 90</th>
+        <th>Goals + Assists per 90</th>
+        <th>Goals + Pens per 90</th>
+        <th>Goals + Assists + Pens per 90</th>
+        <th>xG</th>
+        <th>Non-Pen xG</th>
+        <th>xA</th>
+        <th>xA per 90</th>
+        <th>xG + xA per 90</th>
+        <th>Non-Pen xG per 90</th>
+        <th>Non-Pen xG + xA per 90</th>
+    </tr>
+    {% for item in stats %}
+    <tr> 
+         <td>{{ item.squad }}</td>
+         <td>{{ item.players_used }}</td>
+         <td>{{ item.avg_age }}</td>
+         <td>{{ item.possession }}</td>
+         <td>{{ item.games }}</td>
+         <td>{{ item.games_starts }}</td>
+         <td>{{ item.minutes }}</td>
+         <td>{{ item.minutes_90 }}</td>
+         <td>{{ item.goals }}</td>
+         <td>{{ item.assists }}</td>
+         <td>{{ item.goals_pens }}</td>
+         <td>{{ item.pens_made }}</td>
+         <td>{{ item.pens_att }}</td>
+         <td>{{ item.cards_yellow }}</td>
+         <td>{{ item.cards_red }}</td>
+         <td>{{ item.goals_per90 }}</td>
+         <td>{{ item.assists_per90 }}</td>
+         <td>{{ item.goals_assists_per90 }}</td>
+         <td>{{ item.goals_pens_per90 }}</td>
+         <td>{{ item.goals_assists_pens_per90 }}</td>
+         <td>{{ item.xg }}</td>
+         <td>{{ item.npxg }}</td>
+         <td>{{ item.xa }}</td>
+         <td>{{ item.xa_per90 }}</td>
+         <td>{{ item.xg_xa_per90 }}</td>
+         <td>{{ item.npxg_per90 }}</td>
+         <td>{{ item.npxg_xa_per90 }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
