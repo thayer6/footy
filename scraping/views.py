@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from scraping.models import ResultsFixtures, Table, Stats
+from scraping.models import ResultsFixtures, Table, Stats, PoolTable
 
 def table_view(request):
     table = Table.objects.all()
@@ -17,6 +17,10 @@ def fixtures_view(request):
 def stats_view(request):
     stats = Stats.objects.all()
     return render(request, 'stats.html', {'stats':stats})
+
+def pool_view(request):
+    pool = PoolTable.objects.all()
+    return render(request, 'pool.html', {'pool':pool})
 
 # # import the get_user_model
 # # User = get_user_model()

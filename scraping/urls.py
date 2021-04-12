@@ -8,7 +8,8 @@ urlpatterns = [
     path("table/", views.table_view, name="table"),
     path("results/", views.results_view, name="results"),
     path("fixtures/", views.fixtures_view, name="fixtures"),
-    path("stats/", views.stats_view, name="stats")
+    path("stats/", views.stats_view, name="stats"),
+    path("pool/", views.pool_view, name = "pool")
     #path("stats/", views.stats, name = "epl_stats"),
     #path("fixtures/", views.fixtures, name = "epl_fixtures")
     # dynamically generate URL depending on the project you want to view

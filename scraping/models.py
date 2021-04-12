@@ -64,5 +64,10 @@ class Stats(models.Model):
     npxg_per90 = models.FloatField(null=True)
     npxg_xa_per90 = models.FloatField(null=True)
     
+class PoolTable(models.Model):
+    owner = models.CharField(null=True, blank = True, max_length=250)
+    squads = models.CharField(null=True, blank = True, max_length=500)
+    points = models.IntegerField(null=True)
+    
     class Admin:
       pass
