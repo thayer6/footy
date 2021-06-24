@@ -27,10 +27,10 @@
         <th>Squads</th>
         <th>Points</th>
     </tr>
-    {% for item in table %}
+    {% for item in pool %}
     <tr> 
          <td>{{ item.owner }}</td>
-         <td>{{ item.squad }}</td>
+         <td>{{ item.squads }}</td>
          <td>{{ item.points }}</td>
     </tr>
     {% endfor %}

@@ -84,7 +84,7 @@ class Command(BaseCommand):
         # df_table = pd.DataFrame.from_dict(pre_df)
 
         # reset table database
-        Table.objects.all().delete()
+        #Table.objects.all().delete()
 
         table_url = "https://fbref.com/en/comps/9/Premier-League-Stats"
         df_table = get_table(table_url, table_features)
@@ -93,7 +93,7 @@ class Command(BaseCommand):
         #print(df_table)
 
         # reset resultsfix database
-        ResultsFixtures.objects.all().delete()
+        #ResultsFixtures.objects.all().delete()
         
         results_fixtures_url = "https://fbref.com/en/comps/9/schedule/Premier-League-Scores-and-Fixtures"
         resfix_df = get_table(results_fixtures_url, results_fix_features)
@@ -109,7 +109,7 @@ class Command(BaseCommand):
         #print(resfix_df)
 
         # reset stats database
-        Stats.objects.all().delete()
+        #Stats.objects.all().delete()
 
         stats_url = "https://fbref.com/en/comps/9/stats/Premier-League-Stats"
         stats_df = get_table(stats_url, stats_features)
@@ -159,6 +159,7 @@ class Command(BaseCommand):
             #                                     goals_difference = df_table['goal_diff'][i], points = df_table['points'][i])
             # if(i==19):
             #     print('table updated')
+            #     print(df_table)
         
 
         # # scrape epl schedule
@@ -199,6 +200,7 @@ class Command(BaseCommand):
         #     )
         # if(i==(len(resfix_df['date']) - 1)):
         #     print('results & fixtures updated')
+        #     print(resfix_df)
         # scrape epl stats
         for i in range(0,20):
             # # initial creation of table

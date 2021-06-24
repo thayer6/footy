@@ -20,6 +20,7 @@ def stats_view(request):
 
 def pool_view(request):
     pool = PoolTable.objects.all()
+    pool = pool.order_by('-points')
     return render(request, 'pool.html', {'pool':pool})
 
 # # import the get_user_model

@@ -61,6 +61,8 @@ class Command(BaseCommand):
         # for i in range(0, len(owners)):
 
         #     pool_table.iloc[i]['Squads'] = re.sub(r'\[', '', pool_table.iloc[i]['Squads'])
+
+        PoolTable.objects.all().delete()
         
         for i in range(0,len(owners)):
             # initial creation of table
@@ -74,5 +76,13 @@ class Command(BaseCommand):
                     print('table created')
             except django.db.utils.IntegrityError:
                 print('not created')
+
+            # Table.objects.filter(id=i).update(rank = df_table['rank'][i], squad = df_table['squad'][i], games = df_table['games'][i],
+            #                                     wins = df_table['wins'][i], draws = df_table['draws'][i], losses = df_table['losses'][i],
+            #                                     goals_for = df_table['goals_for'][i], goals_against = df_table['goals_against'][i],
+            #                                     goals_difference = df_table['goal_diff'][i], points = df_table['points'][i])
+            # if(i==19):
+            #     print('table updated')
+            #     print(df_table)
 
         return
