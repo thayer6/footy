@@ -1,5 +1,5 @@
-Footy
-=====
+Trofeo
+======
 
 Django web application with PostgreSQL backend, containerizzed for reproducible environment (6 networked docker containers). 
 
