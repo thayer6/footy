@@ -7,6 +7,8 @@ Current Features
 ================
 * Routinely scraped EPL table, results/fixtures, and statistics rendered into web app pages
 
+
+
 * Fantasy pool table generated based on draft results and automatically updates throughout the season
 
 Future Features (in progress)
