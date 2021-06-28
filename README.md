@@ -7,9 +7,13 @@ Current Features
 ================
 * Routinely scraped EPL table, results/fixtures, and statistics rendered into web app pages
 
+![alt text](https://github.com/thayer6/footy/blob/master/table-screenshot.png?raw=rue)
+![alt text](https://github.com/thayer6/footy/blob/master/results-screenshot.png?raw=rue)
 
 
 * Fantasy pool table generated based on draft results and automatically updates throughout the season
+
+![alt text](https://github.com/thayer6/footy/blob/master/standings-screenshot.png?raw=rue)
 
 Future Features (in progress)
 =============================
