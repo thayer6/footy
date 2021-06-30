@@ -1,6 +1,8 @@
 Trofeo
 ======
 
+Expanded off of R Shiny app: https://thayer6.shinyapps.io/epl-pool/ (GitHub reposoitory: https://github.com/thayer6/epl-shiny.git)
+
 Django web application with PostgreSQL backend, containerizzed for reproducible environment (6 networked docker containers). 
 
 Current Features
