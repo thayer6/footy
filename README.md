@@ -21,3 +21,4 @@ Future Features (in progress)
 =============================
 * Integration of live draft and user authentication to support multiple leagues
 * Include betting features to enhance fantasy league competition
+* Built in predictions of league winners
